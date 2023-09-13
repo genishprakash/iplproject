@@ -15,7 +15,13 @@ csv= fs.readFileSync(path.resolve(__dirname,"../data/deliveries.csv"));
         }
         jsonObj.push(obj);
     }
-    JSON.stringify(jsonObj);
-//console.log(jsonObj);
+    
 module.exports=jsonObj;
-
+const jsonString = JSON.stringify(jsonObj);
+fs.writeFile('./src/public/deliveries.json', jsonString, err => {
+    if (err) {
+        console.log('Error writing file', err);
+    } else {
+        console.log('Successfully wrote file ');
+    }
+})

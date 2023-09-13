@@ -15,7 +15,6 @@ let obj=deliveries.filter(x=> x.player_dismissed!='')
         acc[a][curr.player_dismissed]+=1;
     }
     if(acc[a][curr.player_dismissed]>max){
-
         let temp={}
         temp[curr.player_dismissed]=acc[a][curr.player_dismissed];
         result={}

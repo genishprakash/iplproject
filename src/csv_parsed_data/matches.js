@@ -15,13 +15,12 @@ csv= fs.readFileSync(path.resolve(__dirname,"../data/matches.csv"));
         }
         jsonObj.push(obj);
     }
-
     module.exports=jsonObj;
     const jsonString = JSON.stringify(jsonObj)
-    fs.writeFile('../public/matches.json', jsonString, err => {
+    fs.writeFile('./src/public/matches.json', jsonString, err => {
         if (err) {
             console.log('Error writing file', err)
         } else {
-            console.log('Successfully wrote file bjb')
+            console.log('Successfully wrote file ')
         }
     })
